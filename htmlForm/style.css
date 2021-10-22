@@ -1,0 +1,62 @@
+body {
+    background: rgb(102, 101, 101);
+}
+
+.container {
+    margin: auto;
+    width: 70%;
+    border: 3px solid rgb(0, 0, 2);
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+#messageBoard {
+    color: rgb(70, 18, 18);
+}
+.inputs{
+    margin: 0 auto;
+}
+
+.labels{
+    width: 200px;
+    margin: 0 auto;
+}
+.label {
+    float: left;
+    min-width: 80%;
+    border-radius: 10px;
+    background: #445e1f;
+    padding: 7px;
+    margin-top: 0px;
+    margin: 7px;
+}
+
+.input {
+    background-color: rgb(151, 148, 148);
+    padding: 5px;
+    border-radius: 10px;
+
+}
+
+.submitBtn {
+    border-radius: 10px;
+    width: 70px;
+    height: 40px;
+    background-color: rgb(93, 125, 126);
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#wrapper {
+    display: flex; 
+    text-align: center;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}

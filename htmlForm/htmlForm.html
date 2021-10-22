@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="style.css" type="text/css">
+<div class = 'container'>
+    <h1>Html Form Validation</h1>
+    <form id = 'form' onsubmit="return false">
+        <div id="wrapper">
+            <div class="labels">
+                <label class = 'label' for="fname">First name:</label><br/><br>
+                <label class = 'label' for="lname">Last name:</label><br/><br>
+                <label class = 'label' for="age">Age:</label><br/><br>
+                <label class = 'label' for="email">Email:</label><br/><br>
+                <label class = 'label' for="password">Password:</label><br/><br>
+            </div>
+            <div class = 'inputs'>
+                <input class ='input' type="text" id="fname" name="fname" required="required"><br/><br>
+                <input class ='input' type="text" id="lname" name="lname" required="required"><br><br>
+                <input class ='input' type="text" id="age" name="age" required="required"><br><br>
+                <input class ='input' type="text" id="email" name="email" required="required"><br><br>    
+                <input class ='input' type="text" id="password" name="password" required="required"><br><br>
+            </div>
+        </div>
+        <div class = 'row'>
+            <button class = 'submitBtn' type="submit" onclick="getValues()" >Submit</button>
+        </div>
+    </form>
+
+</div>
+<div id = 'messageBoard'></div>
+<script src ='script.js' language ='javascript'></script>
+</body>
+</html>
