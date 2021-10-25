@@ -19,7 +19,7 @@ body {
 }
 
 .labels{
-    width: 200px;
+    min-width: 180px;
     margin: 0 auto;
 }
 .label {
