@@ -8,7 +8,8 @@ const errorMessages = {
   firstName: 'first and last name must start with Upper Case letter,have 2-20 characters, no numbers or special characters',
   lastName: 'first and last name must start with Upper Case letter,have 2-20 characters, no numbers or special characters',
   email: 'Wrong email',
-  password: 'Password must contain at least one: number, upper case letter, lower case letter,special character and have min.8 chars'
+  password: 'Password must contain at least one: number, upper case letter, lower case letter,special character and have min.8 chars',
+  phone: 'Phone number must consist of only numbers and have length of 9 '
 }
 
 const HtmlForm = {
@@ -16,7 +17,8 @@ const HtmlForm = {
   lastName: false,
   age: false,
   email: false,
-  password: false
+  password: false,
+  phone : false
 }
 
 function getValues () {
@@ -42,13 +44,14 @@ function checkRequirements (inputValues) {
   // (?=.*[0-9]) => The string must contain at least one number
   // (?=.*[!@#\$%\^&\*]) => The string must contain at least one special character
   // (?=.{8,}) => THe string must be at least 8 characters long
-
+  const phoneRegex = new RegExp('^([0-9]){9}')
   // validate whether our inputs are correct
   firstAndLastNameRegex.test(inputValues[0]) ? HtmlForm.firstName = true : false
   firstAndLastNameRegex.test(inputValues[1]) ? HtmlForm.lastName = true : false
   ageRegex.test(inputValues[2]) ? HtmlForm.age = true : false
   validateEmail(inputValues[3], HtmlForm)
   passwordRegex.test(inputValues[4]) ? HtmlForm.password = true : false
+  phoneRegex.test(inputValues[5]) ? HtmlForm.phone = true : false
   // if there are some wrong filled fields show list of errors or display alert
   Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) : form.onsubmit = true && alert('Correct validation')
 }
