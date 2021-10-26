@@ -53,8 +53,7 @@ function checkRequirements (inputValues) {
   passwordRegex.test(inputValues[4]) ? HtmlForm.password = true : false
   phoneRegex.test(inputValues[5]) ? HtmlForm.phone = true : false
   // if there are some wrong filled fields show list of errors or display alert
-  Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) :  form.onsubmit = true
-  Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) :  messageBoard.innerHTML = ''
+  Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) :  form.onsubmit = true && (messageBoard.innerHTML = '')
 }
 
 function validateEmail (emailAdress, HtmlForm) {
