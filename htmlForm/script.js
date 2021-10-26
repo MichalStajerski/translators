@@ -18,7 +18,7 @@ const HtmlForm = {
   age: false,
   email: false,
   password: false,
-  phone : false
+  phone: false
 }
 
 function getValues () {
@@ -32,7 +32,7 @@ function checkRequirements (inputValues) {
   // [A-Za-z] => must contain only upper or lower case letters
   // {1,19} length of string between 2 and 20
   const ageRegex = new RegExp('^([1-9]|[1-9][0-9]|1[01][0-9]|12[0-5])$') // expects numbver between 1 and 125
-  // range from 1 to 125 is divided into: 
+  // range from 1 to 125 is divided into:
   // 1-9 => [1-9]
   // 10 - 99 => [1-9][0-9]
   // 100 - 119 => 1[01][0-9]
@@ -53,7 +53,7 @@ function checkRequirements (inputValues) {
   passwordRegex.test(inputValues[4]) ? HtmlForm.password = true : false
   phoneRegex.test(inputValues[5]) ? HtmlForm.phone = true : false
   // if there are some wrong filled fields show list of errors or display alert
-  Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) :  form.onsubmit = true && (messageBoard.innerHTML = '')
+  Object.values(HtmlForm).some(k => k !== true) ? showErrors(HtmlForm) : form.onsubmit = true && (messageBoard.innerHTML = '')
 }
 
 function validateEmail (emailAdress, HtmlForm) {
@@ -65,7 +65,7 @@ function validateEmail (emailAdress, HtmlForm) {
   // @ => must include this special char
   // \w+([\.-]?\w+)* => same as before just for the email domain
   // .\w{2,3} => two or three char string like com, pl, eu
-  // (\.\w{2,3})+ => this expression can occur one or more times 
+  // (\.\w{2,3})+ => this expression can occur one or more times
   emailAdress.match(regexEmail) ? HtmlForm.email = true : HtmlForm
 }
 
